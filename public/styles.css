@@ -1,0 +1,186 @@
+/* Gallery styles */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* General modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px; /* Maximum width */
+  overflow-y: auto; /* Allows scrolling within the modal if content is too long */
+  max-height: 80vh; /* Limits the modal height to 80% of the viewport height */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="file"],
+form textarea,
+form .supply-input { /* Added class for dynamically added supply inputs */
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button[type="button"] {
+  background-color: #f44336;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+/* Image preview */
+#previewImage {
+  margin-top: 15px;
+  max-height: 300px;
+  display: block; /* Ensure visibility when file is selected */
+}
+
+/* Add Supply button styling */
+#addSupply {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #008CBA; /* Blue */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#addSupply:hover {
+  background-color: #007B9E;
+}
+
+/* Supply inputs styling */
+#supplyInputs {
+  margin-top: 10px;
+}
+
+#supplyInputs input[type="text"] {
+  margin-top: 5px;
+  margin-bottom: 5px; /* Space between supply inputs */
+}
+
+/* Add/Edit Craft Modal Title */
+#craftModalTitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add craft button styling */
+#addCraftButton {
+  background-color: #ffbb33;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+}
+
+#addCraftButton:hover {
+  background-color: #ff8800;
+}
+
+/* Craft detail list */
+#craftDetailSupplies {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#craftDetailSupplies li {
+  background-color: #e7e7e7;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+/* Craft images in the gallery */
+.craft-image {
+  max-width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.craft-image:hover {
+  transform: scale(1.05);
+}
+
+/* Edit and Delete button styles */
+.edit-craft, .delete-craft {
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.edit-craft:hover, .delete-craft:hover {
+  color: #555;
+}
+
+/* Responsive tweaks for better mobile experience */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+
+  #addCraftButton {
+    padding: 15px;
+    font-size: 28px;
+    bottom: 25px;
+    right: 25px;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy and Sell Crafts</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+  <!-- Button to trigger add craft modal -->
+  <button id="addCraftButton">+</button>
+
+  <!-- Gallery where craft images will be displayed -->
+  <div id="gallery" class="w3-row-padding"></div>
+  
+  <!-- The Add/Edit Craft Modal (hidden by default) -->
+  <div id="craftModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="closeCraftModal">&times;</span>
+      <h2 id="craftModalTitle">Add Your Craft</h2>
+      <form id="craftForm" enctype="multipart/form-data">
+        <input type="hidden" id="craftId"> <!-- Hidden input for storing editing craft ID -->
+        <label for="craftName">Name:</label>
+        <input type="text" id="craftName" name="craftName" required>
+        
+        <label for="craftDescription">Description:</label>
+        <textarea id="craftDescription" name="craftDescription" required></textarea>
+        
+        <div id="supplyInputs">
+          <label>Supplies:</label>
+          <input type="text" class="supplyInput" name="supplies[]" required>
+        </div>
+        <button type="button" id="addSupply">Add Supply</button>
+        
+        <label for="craftImage">Select an Image:</label>
+        <input type="file" id="craftImage" name="craftImage" accept="image/*">
+        <img id="previewImage" style="max-width: 100%; display: none;">
+        
+        <button type="submit">Save</button>
+        <button type="button" id="cancelCraft">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- The Craft Detail Modal (hidden by default) -->
+  <div id="craftDetailModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="closeCraftDetailModal">&times;</span>
+      <h2 id="craftDetailTitle"></h2>
+      <p id="craftDetailDescription"></p>
+      <ul id="craftDetailSupplies"></ul>
+      <!-- Edit and Delete Buttons -->
+      <button type="button" id="editCraftButton">Edit</button>
+      <button type="button" id="deleteCraftButton">Delete</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
